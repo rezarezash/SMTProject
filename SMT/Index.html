@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html ng-app="project">
+<head>
+    <title>Bootstrap</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/project.js"></script>
+    <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .left-margin
+        {
+            margin-left: 10px;
+        }
+
+        .row
+        {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    </style>
+
+</head>
+<body ng-controller="AppCtrl">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">{{data}}</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2 alert alert-info">
+            <ul class="nav nav-pills nav-stacked span3">
+                <li class="active leftnav" id="technology"><a href="/">Technology</a></li>
+                <li class="leftnav"><a href="/Ticket" id="ticket">Ticket Trouble</a></li>
+                <li class="leftnav"><a href="#" id="tickerSumary">Testing summary</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+            <div class="container">
+                    <ng-view></ng-view>
+            </div>
+        </div>
+    </div>
+    <!--<div id="footer">
+        <div class="container">
+            <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+        </div>
+    </div>-->
+     <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navvar navbar-text pull-left">Site by Xchanging</p>
+        </div>
+    </div>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav li').click(function (e) {
+                $('.nav li').removeClass('active');
+                var $this = $(this);
+                if (!$this.hasClass('active')) {
+                    $this.addClass('active');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
